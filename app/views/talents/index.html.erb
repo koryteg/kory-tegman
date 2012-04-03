@@ -1,0 +1,18 @@
+<h2>Talent</h2>
+<p>Here are some projects that I have been blessed to be apart of.</p>
+
+<% @talents.each do |talent| %>
+	<div id="talent_post">
+		<p><%= talent.title %></p>
+	    <p><%= talent.description %></p>
+	    <p><%= image_tag talent.image_url.to_s %></p>
+	    <p><%= link_to 'Show', talent %></p>
+	    <p><%= link_to 'Edit', edit_talent_path(talent) %></p>
+	    <p><%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
+	</div>
+<% end %>
+
+
+<br />
+
+<%= link_to 'New Talent', new_talent_path %>
