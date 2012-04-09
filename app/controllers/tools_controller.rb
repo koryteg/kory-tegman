@@ -1,4 +1,5 @@
 class ToolsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /tools
   # GET /tools.json
   def index

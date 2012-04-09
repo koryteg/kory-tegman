@@ -7,8 +7,10 @@
 	    <p><%= talent.description %></p>
 	    <p><%= image_tag talent.image_url.to_s %></p>
 	    <p><%= link_to 'Show', talent %></p>
-	    <p><%= link_to 'Edit', edit_talent_path(talent) %></p>
-	    <p><%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
+	    <% if user_signed_in? %>
+			<p><%= link_to 'Edit', edit_talent_path(talent) %></p>
+	    	<p><%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
+		<% end %>
 	</div>
 <% end %>
 

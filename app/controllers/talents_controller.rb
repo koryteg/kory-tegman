@@ -1,4 +1,5 @@
 class TalentsController < ApplicationController
+  before_filter :authenticate_user!, :except => [:show, :index]
   # GET /talents
   # GET /talents.json
   def index

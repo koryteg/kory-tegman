@@ -6,6 +6,8 @@
 	<h3><%= @tool.name %></h3>
 		<%= image_tag @tool.image_url.to_s %>
 </div>
-	
+
+<% if user_signed_in? %>	
 <%= link_to 'Edit', edit_tool_path(@tool) %> |
+<% end %>
 <%= link_to 'Back', tools_path %>

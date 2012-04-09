@@ -11,10 +11,10 @@
 </p>
 
 <p>
-  <b>Image:</b>
   <%= image_tag @talent.image_url.to_s %>
 </p>
 
-
-<%= link_to 'Edit', edit_talent_path(@talent) %> |
+<% if user_signed_in? %>
+	<%= link_to 'Edit', edit_talent_path(@talent) %> |
+<% end %>
 <%= link_to 'Back', talents_path %>
