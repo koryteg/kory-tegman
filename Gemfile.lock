@@ -138,7 +138,9 @@ DEPENDENCIES
   html5-rails
   jquery-rails
   pg
+  rack
   rails (= 3.2.2)
+  railties
   rmagick
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)

@@ -19,6 +19,9 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+  gem 'railties'
+  gem 'rack'
+
 end
 
 gem 'jquery-rails'
