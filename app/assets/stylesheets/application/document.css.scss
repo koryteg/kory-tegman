@@ -19,7 +19,7 @@ a {
 	text-decoration: none;
 }
 a:visited {
-	color: $dark-grey;
+	color: darken($dark-grey, 10%);
 }
 a:hover {
 	color: lighten($dark-grey, 10%);
@@ -29,6 +29,7 @@ header {
 	width: 960px;
 	height: 160px;
 	background-color: $mid-grey;
+	border-bottom: 1px $dark-grey solid;
 }
 #head-left{
 	width: 480px;
@@ -40,27 +41,36 @@ header {
 #title {
 	width: 330px;
 	float: right;
+	h1{
+		margin: 0px;
+		margin-top: 50px;
+	}
+	p{
+		margin: 0px;
+	}
 }
 
 #head-right {
 	width: 480px;
+	height: 160px;
 	float: right;
-	
-	ul {
-		padding-top: 229px;
-	}
-	li a {
-		width: 60px;
-	}
 }
 header ul {
-	display: inline;
+	display: block;
 	decoration: none;
 	padding: 0px;
+	float: left;
+	margin: 0px;
+	margin-top: 62px;
 }
 
 header li {
-	display: inline;
+	display: block;
+	float: left;
+	width: 80px;
+}
+#user-nav {
+	float: right;
 }
 .talent-post{
 	width: 460px;
@@ -75,7 +85,6 @@ header li {
 		width: 140px;
 		float: left;
 		display: inline-block;
-		
 	}
 	
 	p{
@@ -89,6 +98,8 @@ header li {
 
 .talent-image {
 	float: right;
+	border: 1px $dark-grey solid;
+
 	
 }
 

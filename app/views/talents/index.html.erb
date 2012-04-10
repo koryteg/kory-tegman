@@ -15,5 +15,6 @@
 
 
 <br />
-
-<div class="new-talent"><%= link_to 'New Talent', new_talent_path %></div>
+<% if user_signed_in? %>
+	<div class="new-talent"><%= link_to 'New Talent', new_talent_path %></div>
+<% end %>

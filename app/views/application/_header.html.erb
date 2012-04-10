@@ -15,9 +15,9 @@
 			<li><%= link_to 'Tools', tools_path %></li>
 			<li><%= link_to 'Blog', blogs_path %></li>
 		</ul>
-		<div id="user_nav">
+		<div id="user-nav">
 			<% if  user_signed_in? %>
-				signed in as <%= current_user.email %>
+				signed in
 				<%= link_to 'sign out', destroy_user_session_path, :method => :delete %>
 			<% else %>
 				<%= link_to 'sign in', new_user_session_path %>
