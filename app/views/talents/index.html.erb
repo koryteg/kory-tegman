@@ -2,14 +2,13 @@
 <p>Here are some projects that I have been blessed to be apart of.</p>
 
 <% @talents.each do |talent| %>
-	<div id="talent_post">
-		<p><%= talent.title %></p>
-	    <p><%= talent.description %></p>
-	    <p><%= image_tag talent.image_url.to_s %></p>
-	    <p><%= link_to 'Show', talent %></p>
+	<div class="talent-post">
+		<p><b><%= talent.title %></b>
+	    <%= talent.description %></p>
+	    <%= link_to (image_tag talent.image_url(:thumb).to_s ), talent, :class => "talent-image" %>
 	    <% if user_signed_in? %>
-			<p><%= link_to 'Edit', edit_talent_path(talent) %></p>
-	    	<p><%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
+			<p><%= link_to 'Edit', edit_talent_path(talent) %>
+	    	<%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
 		<% end %>
 	</div>
 <% end %>
@@ -17,4 +16,4 @@
 
 <br />
 
-<%= link_to 'New Talent', new_talent_path %>
+<div class="new-talent"><%= link_to 'New Talent', new_talent_path %></div>
