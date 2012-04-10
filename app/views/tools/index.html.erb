@@ -1,9 +1,10 @@
 <h2>Tools</h2>
-
+<p>Here are some tools that I have grown to love and use regularly</p>
 
 <% @tools.each do |tool| %>
 
 	<p><%= link_to tool.name, tool %></p>
+	<%= link_to (image_tag tool.image_url(:thumb).to_s ), tool, :class => "tool-image" %>
     <p><%= link_to 'Show', tool %></p>
     <% if user_signed_in? %>
 	<p><%= link_to 'Edit', edit_tool_path(tool) %></p>
