@@ -139,7 +139,7 @@ DEPENDENCIES
   jquery-rails
   pg
   rack
-  rails (= 3.2.2)
+  rails
   railties
   rmagick
   sass-rails (~> 3.2.3)
