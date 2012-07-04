@@ -3,7 +3,7 @@
 
 <% @talents.each do |talent| %>
 	<div class="talent-post">
-		<p><b><%= talent.title %></b>
+		<p><b><a href="<%= talent.link %>"><%= talent.title %></a></b>
 	    <%= talent.roles %></p>
 	    <%= link_to (image_tag talent.image_url(:thumb).to_s ), talent, :class => "talent-image" %>
 	    <% if user_signed_in? %>
