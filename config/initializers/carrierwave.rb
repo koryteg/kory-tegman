@@ -3,7 +3,7 @@ CarrierWave.configure do |config|
     :provider               => 'AWS',       # required
     :aws_access_key_id      => 'AKIAJLG76CSB77SVVPJQ',       # required
     :aws_secret_access_key  => '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',       # required
-    :region                 => 'eu-west-1'  # optional, defaults to 'us-east-1'
+    
   }
   config.fog_directory  = 'korytegman'                     # required
   config.fog_host       = 'https://korytegman.s3-website-us-east-1.amazonaws.com/'            # optional, defaults to nil
