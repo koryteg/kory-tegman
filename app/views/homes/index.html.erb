@@ -1,10 +1,10 @@
-<h2>Home</h2>
+
 <% @homes.each do |home| %>
  
-    <p><%= home.title %></p>
-    <p><%= home.description %></p>
-    <p><%= link_to 'Show', home %></p>
+    <h2><%= home.title %></h2>
+    <p class="home"><%= home.description %></p>
     <% if user_signed_in? %>
+		<p><%= link_to 'Show', home %></p>
 		<p><%= link_to 'Edit', edit_home_path(home) %></p>
     	<p><%= link_to 'Destroy', home, confirm: 'Are you sure?', method: :delete %></p>
 	<% end %>
