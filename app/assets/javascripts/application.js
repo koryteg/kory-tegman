@@ -8,9 +8,21 @@
 // the compiled file.
 //
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
-// GO AFTER THE REQUIRES BELOW.
+//GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
 //= require jquery_ujs
 //= require h5bp
+
+$(function() {
+	var url = window.location.pathname;
+	$("#head-right ul li a").each(function(){
+		if($(this).attr("href") == url){
+			$(this).addClass("onpage");
+		}
+	});	
+});
+		
+	 
+
 
