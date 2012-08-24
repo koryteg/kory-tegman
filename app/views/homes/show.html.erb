@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<div class="home">
 <p>
   <b>Title:</b>
   <%= @home.title %>
@@ -7,9 +7,10 @@
 
 <p>
   <b>Description:</b>
-  <%= @home.description %>
+  <%= @home.description.html_safe %>
 </p>
 
+</div>
 <% if user_signed_in? %>
 <%= link_to 'Edit', edit_home_path(@home) %>
 <% end %> |

@@ -1,7 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <h2><a href="<%= @talent.link %>"><%= @talent.title %></a></h2>
+  <h2><%= @talent.title %></h2>
   
 </p>
 
@@ -13,6 +13,11 @@
 <p>
   <b>Description:</b>
   <%= @talent.description %>
+</p>
+
+<p>
+  <a href="<%= @talent.link %>"><b>Link to Project</b></a>
+
 </p>
 
 <p>
