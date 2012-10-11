@@ -1,8 +1,41 @@
-<h2>Coming Soon!</h2>
+
+<script src="/assets/jquery.js?body=1" type="text/javascript"></script>
+
+
+<script src="http://askdonttell.tumblr.com/api/read/json" type="text/javascript">
+</script>
 
 
 
-<% @blogs.each do |blog| %>
+<div class="blog-start">
+	<h2>Photo Blog</h2>
+</div>
+<script type="text/javascript">
+$(function() {
+	var posts = tumblr_api_read.posts;
+	console.log( posts[0]["type"] )
+	
+	
+	$ul = $('.blog ul');
+	$li = $('.blog ul li');
+	for (var i=0; i<12; i++){
+		var len = 10;
+		var p = posts[i];
+		if (p["type"] == ['photo']){
+		var date = p['date'];
+		var title = p['slug'].replace(/\-/g, " ");
+		var photo = p['photo-url-250'];
+		var desc = p['slug'];
+		
+		$(".blog-start").append('<div class="blog"><b>' + title + '</b><br /> <img alt ="' + desc + '" src="' + photo + '" class="blog-image" /></div>');};
+	};
+
+})
+</script>
+
+
+
+<!--<% @blogs.each do |blog| %>
   
    	<p><%= blog.title %></p>
     <p><%= blog.content %></p>
@@ -18,3 +51,5 @@
 <% if user_signed_in? %>
 <%= link_to 'New Blog', new_blog_path %>
 <% end %>
+
+-->
