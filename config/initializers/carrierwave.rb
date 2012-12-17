@@ -1,9 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',       # required
-    :aws_access_key_id      => 'AKIAJLG76CSB77SVVPJQ',       # required
-    :aws_secret_access_key  => '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',       # required
-    
+    :aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
+    :aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
   }
   config.fog_directory  = 'korytegman'                     # required
   config.fog_host       = 'https://korytegman.s3.amazonaws.com'            # optional, defaults to nil
