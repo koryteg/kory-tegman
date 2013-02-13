@@ -90,7 +90,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.21)
     multi_json (1.6.0)
-    net-scp (1.0.6)
+    net-scp (1.0.4)
       net-ssh (>= 2.6.5)
     net-ssh (2.6.5)
     nokogiri (1.5.6)
