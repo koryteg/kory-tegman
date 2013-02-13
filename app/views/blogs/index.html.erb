@@ -2,35 +2,48 @@
 <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
 
 
-<script src="http://askdonttell.tumblr.com/api/read/json" type="text/javascript">
-</script>
+<script src="http://askdonttell.tumblr.com/api/read/json" type="text/javascript"></script>
 
 
 
 <div class="blog-start">
 	<h2>Photo Blog</h2>
 </div>
+
 <script type="text/javascript">
+
+
 $(function() {
+	var startLoad = 0,
+		finishLoad = 12;
+	loadPics(startLoad, finishLoad);
+	$("#footer").waypoint(function() {
+		startLoad +=  12;
+		finishLoad += 12;
+		loadPics(startLoad, finishLoad);
+	},  { offset: '100%' });
+});
+
+function loadPics(start,finish) {
 	var posts = tumblr_api_read.posts;
-	console.log( posts[0]["type"] )
-	
 	
 	$ul = $('.blog ul');
 	$li = $('.blog ul li');
-	for (var i=0; i<12; i++){
+	for (var i=start; i<finish; i++){
 		var len = 10;
 		var p = posts[i];
 		if (p["type"] == ['photo']){
-		var date = p['date'];
-		var title = p['slug'].replace(/\-/g, " ");
-		var photo = p['photo-url-250'];
-		var desc = p['slug'];
-		
-		$(".blog-start").append('<div class="blog"><b>' + title + '</b><br /> <img alt ="' + desc + '" src="' + photo + '" class="blog-image" /></div>');};
+			var date = p['date'],
+			 	title = p['slug'].replace(/\-/g, " "),
+			 	photo = p['photo-url-250'],
+			 	desc = p['slug'];
+			$(".blog-start").append('<div class="blog"><b>' + title + '</b><br /> <img alt ="' + desc + '" src="' + photo + '" class="blog-image" /></div>');
+		};
 	};
+	
+}
 
-})
+
 </script>
 
 
