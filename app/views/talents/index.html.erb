@@ -1,21 +1,23 @@
-<h2>Talent</h2>
-<p>Here are some projects that I have been blessed to be apart of.</p>
+<section class="content">
+	<h2>Talent</h2>
+	<p>Here are some projects that I have been blessed to be apart of.</p>
 
-<% @talents.each do |talent| %>
-	<div class="talent-post">
-		<p><b><%= link_to talent.title, talent %></b>
-		
-	    <%= talent.roles %></p>
-	    <%= link_to (image_tag talent.image_url(:thumb).to_s ), talent, :class => "talent-image" %>
-	    <% if user_signed_in? %>
-			<p><%= link_to 'Edit', edit_talent_path(talent) %>
-	    	<%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
-		<% end %>
-	</div>
-<% end %>
+	<% @talents.each do |talent| %>
+		<div class="talent-post">
+			<p><b><%= link_to talent.title, talent %></b>
+			<br />
+		    <%= talent.roles %></p>
+		    <%= link_to (image_tag talent.image_url(:thumb).to_s ), talent, :class => "talent-image" %>
+		    <% if user_signed_in? %>
+				<p><%= link_to 'Edit', edit_talent_path(talent) %>
+		    	<%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
+			<% end %>
+		</div>
+	<% end %>
 
 
-<br />
-<% if user_signed_in? %>
-	<div class="new-talent"><%= link_to 'New Talent', new_talent_path %></div>
-<% end %>
+	<br />
+	<% if user_signed_in? %>
+		<div class="new-talent"><%= link_to 'New Talent', new_talent_path %></div>
+	<% end %>
+</section>

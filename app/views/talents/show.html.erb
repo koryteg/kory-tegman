@@ -1,30 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <h2><%= @talent.title %></h2>
+<section class="content">
+	<p id="notice"><%= notice %></p>
+	<div class="talent-show-words">
+		<p>
+		  <h2><%= @talent.title %></h2>
   
-</p>
+		</p>
 
-<p>
-  <b>Role:</b>
-  <%= @talent.roles %>
-</p>
+		<p>
+		  <b>Role:</b>
+		  <%= @talent.roles %>
+		</p>
 
-<p>
-  <b>Description:</b>
-  <%= @talent.description.html_safe %>
-</p>
+		<p>
+		  <b>Description:</b>
+		  <%= @talent.description.html_safe %>
+		</p>
 
-<p>
-  <a href="<%= @talent.link %>"><b>Link to Project</b></a>
+		<p>
+		  <a href="<%= @talent.link %>"><b>Link to Project</b></a>
 
-</p>
-
-<p>
-  <%= image_tag @talent.image_url.to_s %>
-</p>
-
-<% if user_signed_in? %>
-	<%= link_to 'Edit', edit_talent_path(@talent) %> |
-<% end %>
-<%= link_to 'Back', talents_path %>
+		</p>
+	</div>
+	<div class="talent-show-image">
+	
+		  <%= image_tag @talent.image_url.to_s %>
+	
+	</div>
+	<% if user_signed_in? %>
+		<%= link_to 'Edit', edit_talent_path(@talent) %> |
+	<% end %>
+	<%= link_to 'Back', talents_path %>
+</section>

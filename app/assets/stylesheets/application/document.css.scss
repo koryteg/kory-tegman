@@ -9,9 +9,10 @@
 html {
 	background-color: $light-grey;
 	color: $dark-grey;
+	font-family: $font-family;
 }
 body {
-	width: 960px; 
+	max-width: 960px; 
 	margin: 0 auto; 
 }
 a {
@@ -31,21 +32,21 @@ a:hover {
 	text-decoration: underline;
 }
 header {
-	width: 960px;
+	width: 100%;
 	height: 160px;
 	background-color: $mid-grey;
 	border-bottom: 1px $dark-grey solid;
 }
 #head-left{
-	width: 480px;
+	width: 50%;
 	float: left;
 }
 #logo {
 	float: left;
 }
 #title {
-	width: 330px;
-	float: right;
+	//width: 330px;
+	float: left;
 	h1{
 		margin: 0px;
 		margin-top: 50px;
@@ -56,11 +57,12 @@ header {
 }
 
 #head-right {
-	width: 480px;
+	width: 50%;
 	height: 160px;
-	float: right;
+	float: left;
 }
 header ul {
+	width: 66.6666%;
 	display: block;
 	decoration: none;
 	padding: 0px;
@@ -72,31 +74,36 @@ header ul {
 header li {
 	display: block;
 	float: left;
-	width: 80px;
+	width: 25%;
 }
 #user-nav {
 	float: right;
 }
+
+.content{
+	clear:both;
+}
+
 .home{
-	width: 400px;
+	width: 50%;
 	
 }
 .talent-post{
-	width: 460px;
-	margin: 10px;
+	width: 47.916667%;
+	margin: 1.0416667%;
 	display: block;
 	float: left;
-	height: 225px;
+	//height: 225px;
 	border-bottom: 1px black solid;
 	
 	b{
-		width: 140px;
+		//width: 30.434783%;
 		float: left;
 		display: inline-block;
 	}
 	
 	p{
-		width: 140px;
+		width: 30.434783%;
 		float: left;
 		clear: both;
 		margin: 0px;
@@ -105,15 +112,35 @@ header li {
 }
 
 .talent-image {
+	width:65.217391%;
 	float: right;
-	border: 1px $dark-grey solid;
-
-	
+	//border: 1px $dark-grey solid;
+	img{
+		width:100%;
+	}
 }
 
 .new-talent {
 	clear: both;
 }
+
+
+// talent show pages styles 
+
+.talent-show-words{
+	float:left;
+	width:47.916667%;
+	margin: 1.0416667%;
+}
+.talent-show-image{
+	float:left;
+	width: 47.916667%;
+	margin: 1.0416667%;
+	img{
+		width:100%;
+	}
+}
+
 
 footer{
 	clear: both;
@@ -168,3 +195,7 @@ footer p{
 		width:220px;
 	}
 }
+
+
+
+

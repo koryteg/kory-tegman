@@ -6,6 +6,79 @@
 // This example overrides the primary ('mobile first') styles
 // Modify as content requires.
 
-@media only screen and (min-width: 35em) {
+@media only screen and (max-width: 480px) {
+  // Style adjustments for viewports that meet the condition
+	header{
+		width: 100%;
+		
+		#logo{
+			width:100%;
+			
+		}
+			a img{
+				display: block;
+				margin: 0 auto;
+			}
+		#title{
+			display:none;
+		}
+	}
+	.home{
+		width:100%;
+	}
+	
+	
+}
+
+
+
+@media only screen and (max-width: 660px) {
+	#head-left{
+		width:100%;
+	}
+	#head-right{
+		width:100%;
+		height:40px;
+	}
+	.head-container{
+		width:327px;
+		height:160px;
+		margin:0 auto;
+		//margin-left: 23%;
+		
+	}
+	header ul{
+		margin: 10px 1%;
+		
+		width:100%;
+		li{
+			text-align:center;
+			font-size:1.2em;
+		
+		}
+	}
+	.talent-post{
+		width:97.9166666%;
+	}
+	.talent-show-words{
+		width:100%;
+		margin:0;
+		h2{
+			margin-left: 1%;
+		}
+		p{
+			margin-left: 1%;
+		}
+	}
+	.talent-show-image{
+		width: 100%;
+		margin:0;
+		img{
+			width:100%;
+		}
+	}
   // Style adjustments for viewports that meet the condition
 }
+
+
+
