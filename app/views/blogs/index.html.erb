@@ -1,16 +1,43 @@
-
+<% content_for :title, "Kory Tegman's Blog" %>
 <script src="/assets/jquery.js?body=1" type="text/javascript"></script>
 
 
 <script src="http://askdonttell.tumblr.com/api/read/json" type="text/javascript"></script>
 
+<div id="listing-blogs">
+	
+	
+	<% @blogs.each do |blog| %>
+		<div class="blog-post-preview">
+	   		<h2><%= blog.title %></h2>
+		    <p><%= truncate( blog.content, :length => 200 ).html_safe  %>
+		    <%= link_to '...Continue Reading', blog %></p>
+		    <% if user_signed_in? %>
+				<p><%= link_to 'Edit', edit_blog_path(blog) %></p>
+		    	<p><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></p>
+			<% end %>
+		</div>
+	<% end %>
 
+	<br />
+	<% if user_signed_in? %>
+	<%= link_to 'New Blog', new_blog_path %>
+	<% end %>
+
+	
+</div>
 
 <div class="blog-start">
 	<h2>Photo Blog</h2>
+	
+	<!-- SnapWidget full px -->
+	<iframe class="instaFull" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTB8MnwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:320px; height: 480px" ></iframe>
+	
+	<!-- SnapWidget 660px -->
+	<iframe class="instaTab" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTV8NHwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height: 495px" ></iframe>
 </div>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 
 
 $(function() {
@@ -44,25 +71,6 @@ function loadPics(start,finish) {
 }
 
 
-</script>
+</script> -->
 
 
-
-<!--<% @blogs.each do |blog| %>
-  
-   	<p><%= blog.title %></p>
-    <p><%= blog.content %></p>
-    <p><%= link_to 'Show', blog %></p>
-    <% if user_signed_in? %>
-		<p><%= link_to 'Edit', edit_blog_path(blog) %></p>
-    	<p><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></p>
-	<% end %>
-
-<% end %>
-
-<br />
-<% if user_signed_in? %>
-<%= link_to 'New Blog', new_blog_path %>
-<% end %>
-
--->

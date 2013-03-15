@@ -26,10 +26,24 @@
 	.home{
 		width:100%;
 	}
-	
+	.blog{
+		width:97.9166666%;
+	}
 	
 }
+@media only screen and (max-width: 660px) and (min-width: 480px) {
+	.blog{
 
+		width: 47.916667%;
+
+	}
+	.instaFull{
+		display:none;
+	}
+	.instaTab{
+		display:block;
+	}
+}
 
 
 @media only screen and (max-width: 660px) {
@@ -76,6 +90,27 @@
 		img{
 			width:100%;
 		}
+	}
+	#listing-blogs{
+		float:left;
+		width:98%;
+		
+	}
+	.blog-start{
+		float:left;
+		width: 100%;
+	}
+	.blog{
+		display: block;
+		float: left;
+		margin: 1.0416667%;
+		min-height: 345px;
+		position:relative; 
+	}
+	.blog-post{
+		width:98%;
+		margin:1%;
+		
 	}
   // Style adjustments for viewports that meet the condition
 }
