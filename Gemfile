@@ -25,6 +25,7 @@ group :assets do
 
 end
 
+gem 'newrelic_rpm'
 gem 'jquery-rails'
 gem 'html5-rails'
 gem 'carrierwave'
