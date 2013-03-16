@@ -4,6 +4,15 @@
   <%= render "head" %>
 
   <body class="pages">
+	<div id="fb-root"></div>
+	<script>(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
     <%= render "chromeframe" %>
     <%= render "header" %>
 
@@ -21,6 +30,6 @@
 	<%= javascript_include_tag "shscripts/shBrushXml" %>
 	<%= javascript_include_tag "shscripts/shBrushCss" %>
 	<%= javascript_include_tag "shscripts/shBrushJScript" %>
-	
+	<%= javascript_include_tag "jquery.instagram" %>
   </body>
 </html>

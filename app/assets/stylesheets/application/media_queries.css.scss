@@ -8,6 +8,10 @@
 
 @media only screen and (max-width: 480px) {
   // Style adjustments for viewports that meet the condition
+	body{
+		width:100%;
+	}
+	
 	header{
 		width: 100%;
 		
@@ -37,12 +41,6 @@
 		width: 47.916667%;
 
 	}
-	.instaFull{
-		display:none;
-	}
-	.instaTab{
-		display:block;
-	}
 }
 
 
@@ -62,13 +60,13 @@
 		
 	}
 	header ul{
-		margin: 10px 1%;
+		margin-top: 10px;
 		
 		width:100%;
 		li{
 			text-align:center;
 			font-size:1.2em;
-		
+			width:25%;
 		}
 	}
 	.talent-post{
@@ -96,9 +94,10 @@
 		width:98%;
 		
 	}
-	.blog-start{
+	.instagram{
 		float:left;
 		width: 100%;
+		overflow:hidden;
 	}
 	.blog{
 		display: block;

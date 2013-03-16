@@ -9,9 +9,9 @@
 	
 	<% @blogs.each do |blog| %>
 		<div class="blog-post-preview">
-	   		<h2><%= blog.title %></h2>
-		    <p><%= truncate( blog.content, :length => 200 ).html_safe  %>
-		    <%= link_to '...Continue Reading', blog %></p>
+	   		<h2><%=link_to blog.title, blog %></h2>
+		    <p><%= truncate( blog.content, :length => 300 ).html_safe  %>
+		    <%= link_to 'Continue Reading', blog, :class => "continue-reading" %></p>
 		    <% if user_signed_in? %>
 				<p><%= link_to 'Edit', edit_blog_path(blog) %></p>
 		    	<p><%= link_to 'Destroy', blog, confirm: 'Are you sure?', method: :delete %></p>
@@ -27,19 +27,11 @@
 	
 </div>
 
-<div class="blog-start">
-	<h2>Photo Blog</h2>
-	
-	<!-- SnapWidget full px -->
-	<iframe class="instaFull" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTB8MnwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:320px; height: 480px" ></iframe>
-	
-	<!-- SnapWidget 660px -->
-	<iframe class="instaTab" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTV8NHwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:100%; height: 495px" ></iframe>
+<div class="instagram">
+	<h2>Instagram</h2>
 </div>
 
 <!-- <script type="text/javascript">
-
-
 $(function() {
 	var startLoad = 0,
 		finishLoad = 12;
@@ -52,8 +44,7 @@ $(function() {
 });
 
 function loadPics(start,finish) {
-	var posts = tumblr_api_read.posts;
-	
+	var posts = tumblr_api_read.posts;	
 	$ul = $('.blog ul');
 	$li = $('.blog ul li');
 	for (var i=start; i<finish; i++){
@@ -66,11 +57,8 @@ function loadPics(start,finish) {
 			 	desc = p['slug'];
 			$(".blog-start").append('<div class="blog"><b>' + title + '</b><br /> <img alt ="' + desc + '" src="' + photo + '" class="blog-image" /></div>');
 		};
-	};
-	
+	};	
 }
-
-
 </script> -->
 
 

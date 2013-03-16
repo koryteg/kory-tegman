@@ -15,14 +15,22 @@
 //= require h5bp
 
 $(function() {
+	SyntaxHighlighter.all();
+	currentPageNav();
+	$(".instagram").instagram({
+	      userId: '2734834',
+				accessToken: '2734834.1b3f753.bc8c93250e2b40aeb3216f8aebfb6bb6',
+				show : 9
+	  });
+});
+
+
+function currentPageNav() {
 	var url = window.location.pathname;
 	$("#head-right ul li a").each(function(){
 		if($(this).attr("href") == url){
 			$(this).addClass("onpage");
 		}
-	});	
-});
-		
-	 
-
-
+	});
+	
+}

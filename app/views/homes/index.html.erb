@@ -1,8 +1,9 @@
-
+<%= image_tag "koryprofile.jpg", :class => 'profile-image'  %>
+<div class="home">
 <% @homes.each do |home| %>
  
     <h2><%= home.title %></h2>
-    <p class="home"><%= home.description.html_safe %></p>
+    <p><%= home.description.html_safe %></p>
     <% if user_signed_in? %>
 		<p><%= link_to 'Show', home %></p>
 		<p><%= link_to 'Edit', edit_home_path(home) %></p>
@@ -10,12 +11,14 @@
 	<% end %>
 
 <% end %>
-
-
 <a href="Kory_Tegman_Resume.pdf"><b>Resume</b></a><br />
 <a href="http://github.com/koryteg"><b>GitHub</b></a>
 
 <br />
+</div>
+
+
+
 <% if user_signed_in? %>
 <%= link_to 'New Home', new_home_path %>
 <% end %>

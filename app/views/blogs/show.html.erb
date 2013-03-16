@@ -2,13 +2,14 @@
 
 <div class="blog-post">
 	<p id="notice"><%= notice %></p> 
-	<p>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-via="koryteg">Tweet</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-	</p>
+
 	  <h2><%= @blog.title %></h2>
 	<p>
 	  <%= @blog.content.html_safe %>
+	</p>
+	<p class="share">
+		<a href="https://twitter.com/share" class="twitter-share-button" data-via="koryteg">Tweet</a><div class="fb-like" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true" data-font="verdana"></div>
+		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</p>
 	<div id="disqus_thread"></div>
 	    <script type="text/javascript">
@@ -30,12 +31,6 @@
 	<% end %> |
 	<%= link_to 'Back', blogs_path %>
 </div>
-<div class="blog-start">
-	<h2>Photo Blog</h2>
-	
-	<!-- SnapWidget full px -->
-	<iframe class="instaFull" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTB8MnwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:320px; height: 480px" ></iframe>
-	
-	<!-- SnapWidget 660px -->
-	<iframe class="instaTab" src="http://snapwidget.com/in/?u=a29yeXRlZ3xpbnwxNTV8NHwzfHxub3wxMHxub25l" allowTransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden; width:660px; height: 495px" ></iframe>
+<div class="instagram">
+	<h2>Instagram</h2>
 </div>
