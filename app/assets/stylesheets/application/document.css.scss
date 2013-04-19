@@ -20,19 +20,14 @@ body {
 }
 a {
 	color: $dark-grey;
-	text-decoration: none;
-}
-a:visited {
-	color: darken($dark-grey, 10%);
+	text-decoration: underline;
 }
 a:hover {
-	color: lighten($dark-grey, 10%);
-	text-decoration: underline;
+	color: lighten($dark-grey, 15%);;
 }
 
 .onpage {
-	color: lighten($dark-grey, 10%);
-	text-decoration: underline;
+	text-decoration: underline !important;
 }
 header {
 	width: 100%;
@@ -82,11 +77,18 @@ header li {
 #user-nav {
 	float: right;
 }
-
+.nav li a {
+	text-decoration: none;
+}
 .content{
 	clear:both;
 }
-
+h2 a{
+	text-decoration: none !important;
+}
+h2 a:hover{
+	text-decoration: underline !important;
+}
 .home{
 	width: 50%;
 	float:left;
@@ -118,7 +120,9 @@ header li {
 		padding: 0px;
 	}
 }
-
+.talent-post a{
+	text-decoration: none;
+}
 .talent-image {
 	width:65.217391%;
 	float: right;

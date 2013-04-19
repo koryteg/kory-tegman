@@ -1,7 +1,12 @@
 Koko::Application.routes.draw do
   devise_for :users
-
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+  end
   resources :blogs
+  match '/feed' => 'blogs#feed',
+        :as => :feed,
+        :defaults => { :format => 'atom' }
 
   resources :homes
 
