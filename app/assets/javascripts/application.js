@@ -13,6 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require h5bp
+//= require shscripts/shCore
+//= require shscripts/shBrushXml
+//= require shscripts/shBrushCss
+//= require shscripts/shBrushJScript
+//= require redactor-rails
+//= require jquery.instagram
 
 $(function() {
 	SyntaxHighlighter.all();

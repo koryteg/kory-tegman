@@ -33,6 +33,8 @@ gem 'rmagick'
 gem 'devise', '~> 2.0.4'
 gem 'thin'
 gem 'fog', "~> 1.3.1"
+gem 'redactor-rails' 
+# for rich text editing.
 
 
 # To use ActiveModel has_secure_password

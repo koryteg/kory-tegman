@@ -10,6 +10,17 @@ class BlogsController < ApplicationController
       format.json { render json: @blogs }
     end
   end
+  def feed
+    @title = "Kory Tegman's Blog"
+    @blogs = Blog.all( :order => "created_at DESC" )
+    @updated = @blogs.first.updated_at unless @news_items.empty?
+    
+    respond_to do |format|
+        format.atom { render :layout => false }
+        # we want the RSS feed to redirect permanently to the ATOM feed
+        format.rss { redirect_to feed_path(:format => :atom), :status => :moved_permanently }
+    end
+  end
 
   # GET /blogs/1
   # GET /blogs/1.json
