@@ -22,7 +22,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'railties'
   gem 'rack'
-
 end
 
 gem 'newrelic_rpm'
