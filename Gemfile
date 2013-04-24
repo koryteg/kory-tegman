@@ -29,6 +29,7 @@ gem 'jquery-rails'
 gem 'html5-rails'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'mini_magick'
 gem 'devise', '~> 2.0.4'
 gem 'thin'
 gem 'fog', "~> 1.3.1"
