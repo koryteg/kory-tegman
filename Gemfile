@@ -35,6 +35,8 @@ gem 'thin'
 gem 'fog', "~> 1.3.1"
 gem 'redactor-rails' 
 # for rich text editing.
+gem 'stringex'
+# for slugs in urls
 
 
 # To use ActiveModel has_secure_password

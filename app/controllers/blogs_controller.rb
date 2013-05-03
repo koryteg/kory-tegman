@@ -25,7 +25,7 @@ class BlogsController < ApplicationController
   # GET /blogs/1
   # GET /blogs/1.json
   def show
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_url(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -46,7 +46,7 @@ class BlogsController < ApplicationController
 
   # GET /blogs/1/edit
   def edit
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_url(params[:id])
   end
 
   # POST /blogs
@@ -68,7 +68,7 @@ class BlogsController < ApplicationController
   # PUT /blogs/1
   # PUT /blogs/1.json
   def update
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_url(params[:id])
 
     respond_to do |format|
       if @blog.update_attributes(params[:blog])
@@ -84,7 +84,7 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
-    @blog = Blog.find(params[:id])
+    @blog = Blog.find_by_url(params[:id])
     @blog.destroy
 
     respond_to do |format|
