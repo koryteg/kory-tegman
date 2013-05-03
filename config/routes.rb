@@ -6,6 +6,7 @@ Koko::Application.routes.draw do
     get "/login" => "devise/sessions#new"
   end
   resources :blogs
+  match 'blogs/:id' => 'blogs#show'
   match '/feed' => 'blogs#feed',
         :as => :feed,
         :defaults => { :format => 'atom' }
