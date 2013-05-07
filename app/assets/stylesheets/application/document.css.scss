@@ -98,6 +98,16 @@ h2 a:hover{
 	margin: 0.83em 1%;
 	float:left;
 }
+#talent-content{
+	list-style-type: none;
+	padding:0;
+	margin:0;
+	display:block;
+}
+#talent-content li{
+	float: left;
+	list-style-type: none;
+}
 .talent-post{
 	width: 47.916667%;
 	margin: 1.0416667%;

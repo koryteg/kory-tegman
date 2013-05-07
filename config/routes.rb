@@ -13,8 +13,9 @@ Koko::Application.routes.draw do
 
   resources :homes
 
-  resources :talents
-
+  resources :talents do
+    post "sort", :on => :collection
+  end
   resources :tools
 
   # The priority is based upon order of creation:

@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui-min
 //= require h5bp
 //= require shscripts/shCore
 //= require shscripts/shBrushXml
@@ -30,7 +31,6 @@ $(function() {
 	  });
 });
 
-
 function currentPageNav() {
 	var url = window.location.pathname;
 	$("#head-right ul li a").each(function(){
@@ -40,3 +40,4 @@ function currentPageNav() {
 	});
 	
 }
+

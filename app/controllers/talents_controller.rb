@@ -3,7 +3,7 @@ class TalentsController < ApplicationController
   # GET /talents
   # GET /talents.json
   def index
-    @talents = Talent.all
+    @talents = Talent.all(:order => "talents.position ASC")
 
     respond_to do |format|
       format.html # index.html.erb
@@ -69,6 +69,16 @@ class TalentsController < ApplicationController
       end
     end
   end
+
+  def sort
+    @talents = Talent.all
+    @talents.each do |talent|
+      talent.position = params['talent'].index(talent.id.to_s) + 1
+      talent.save
+    end
+    render :nothing => true
+  end
+
 
   # DELETE /talents/1
   # DELETE /talents/1.json

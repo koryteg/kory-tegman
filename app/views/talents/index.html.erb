@@ -2,9 +2,9 @@
 <section class="content">
 	<h2>Talent</h2>
 	<p>Here are some projects that I have been blessed to be apart of.</p>
-
+	<ul id="talent-content">
 	<% @talents.each do |talent| %>
-		<div class="talent-post">
+		<li class="talent-post" id="talent-<%= talent.id %>">
 			<p><b><%= link_to talent.title, talent %></b>
 			<br />
 		    <%= talent.roles %></p>
@@ -13,9 +13,9 @@
 				<p><%= link_to 'Edit', edit_talent_path(talent) %>
 		    	<%= link_to 'Destroy', talent, confirm: 'Are you sure?', method: :delete %></p>
 			<% end %>
-		</div>
+		</li>
 	<% end %>
-
+	</ul>
 
 	<br />
 	<% if user_signed_in? %>
