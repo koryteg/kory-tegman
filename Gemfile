@@ -22,7 +22,6 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
   gem 'railties'
   gem 'rack'
-  gem 'acts_as_list'
 end
 
 gem 'newrelic_rpm'
@@ -38,7 +37,6 @@ gem 'redactor-rails'
 # for rich text editing.
 gem 'stringex'
 # for slugs in urls
-
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

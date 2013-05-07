@@ -3,7 +3,7 @@ class TalentsController < ApplicationController
   # GET /talents
   # GET /talents.json
   def index
-    @talents = Talent.all(:order => "talents.id ASC")
+    @talents = Talent.all(:order => "talents.position ASC")
 
     respond_to do |format|
       format.html # index.html.erb
