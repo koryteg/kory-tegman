@@ -1,0 +1,17 @@
+<p><a href="/charges/new">new charge</a></p>
+
+<% if user_signed_in? %>
+	<% @charge.each do |charge| %>
+		<div id="charge-<%= charge.id %>" class="charge-box">
+			<p><b>Customer:</b> <%= charge.name %></p>
+			<p><b>Email:</b> <%= charge.email %></p>
+			<p><b>Address line 1:</b> <%= charge.address_line1 %></p>
+			<p><b>Address line 2:</b> <%= charge.address_line2 %></p>
+			<p><b>City:</b> <%= charge.city %></p>
+			<p><b>State:</b> <%= charge.state %></p>
+			<p><b>Zip:</b> <%= charge.address_zip %></p>
+			<p><b>Signup / charge date:</b> <%= charge.created_at.to_time.strftime("%m/%d/%Y") %></p>
+			<p><%= link_to 'Destroy', charge, confirm: 'Are you sure?', method: :delete %></p>
+		</div>
+	<% end %>
+<% end %>

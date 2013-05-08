@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require jquery-ui-min
 //= require h5bp
+//= require charges
 //= require shscripts/shCore
 //= require shscripts/shBrushXml
 //= require shscripts/shBrushCss

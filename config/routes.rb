@@ -10,13 +10,12 @@ Koko::Application.routes.draw do
   match '/feed' => 'blogs#feed',
         :as => :feed,
         :defaults => { :format => 'atom' }
-
   resources :homes
-
   resources :talents do
     post "sort", :on => :collection
   end
   resources :tools
+  resources :charges
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

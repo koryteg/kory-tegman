@@ -1,0 +1,96 @@
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+  Stripe.setPublishableKey('pk_test_N8wSEqLNQq38mFeKRG1d2CWe');
+  console.log("i am here!");
+  jQuery(function() {
+  $('#new_charge').submit(function(event) {
+    var $form = $(this);
+
+    // Disable the submit button to prevent repeated clicks
+    $form.find("input[type='submit']").prop('disabled', true);
+
+    Stripe.createToken($form, stripeResponseHandler);
+
+    // Prevent the form from submitting with the default action
+    return false;
+    });
+  });
+  var stripeResponseHandler = function(status, response) {
+    var $form = $('#new_charge');
+      if (status === 200) {
+      $('#charge_stripe_token').val(response.id)
+      $('#new_charge')[0].submit()
+      }else{
+      $('#stripe_error').text(response.error.message)
+      $('input[type=submit]').attr('disabled', false)
+      }
+    }
+</script>
+  <article>
+    <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+    <h3>Check out</h3>
+      <p>
+        Let your backers know how their payment information will be handled.
+        <br />
+	      <br />
+    		Enter your details below. This Secure Payment is powered by <a href="https://stripe.com/">Stripe</a>.
+      </p>
+     <%= form_for @charge do |f| %>
+	     <% if @charge.errors.any? %>
+  	    <div class="error_messages">
+  	      <h2><%= pluralize(@charge.errors.count, "error") %> prohibited this charge from being saved:</h2>
+  	      <ul>
+  	      <% @charge.errors.full_messages.each do |msg| %>
+  	        <li><%= msg %></li>
+  	      <% end %>
+  	      </ul>
+  	    </div>
+	 	   <% end %>
+       <div class="field">
+      <%= f.label :name, "Name" %>
+	 	  <%= f.text_field :name %>
+      </div>
+      <div class="field">
+      <%= f.label :email, "Email" %>
+      <%= f.email_field :email %>
+      </div>
+      <div class="field">
+      <%= f.label :address_line1, "Address Line 1" %>
+      <%= f.text_field :address_line1 %>
+      </div>
+      <div class="field">
+      <%= f.label :address_line2, "Address Line 2" %>
+      <%= f.text_field :address_line2 %>
+      </div>
+      <div class="field">
+      <%= f.label :city, "City" %>
+      <%= f.text_field :city %>
+      </div>
+      <div class="field">
+      <%= f.label :state, "State" %>
+      <%= f.text_field :state %>
+      </div>
+      <div class="field">
+      <%= f.label :address_zip, "Zipcode" %>
+      <%= f.text_field :address_zip %>
+      </div>
+        <div class="field">
+          <%= label_tag :card_number, "Credit Card Number" %>
+          <%= text_field_tag :card_number, nil, name: nil, :maxlength => 16, :data => {:stripe => "number"} %>
+        </div>
+        <div class="field">
+          <%= label_tag :card_code, "Security Code on Card (CVC)" %>
+          <%= text_field_tag :card_code, nil, name: nil, :data => {:stripe => "cvc"} %>
+        </div>
+        <div class="field">
+          <%= label_tag :card_month, "Card Expiration" %>
+          <%= select_month nil, {add_month_numbers_true: true}, {name: nil, id: "card_month", :data => {:stripe => "exp-month"}} %>
+          <%= select_year nil, {start_year: Date.today.year, end_year: Date.today.year+15}, {name: nil, id: "card_year", :data => {:stripe => "exp-year"}} %>
+        </div>
+      <div class="actions">
+        <%= f.hidden_field :stripe_token %>
+      <%= f.submit "Subscribe" %>
+      </div>
+	 <% end %>
+</article>

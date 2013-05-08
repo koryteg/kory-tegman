@@ -37,6 +37,7 @@ gem 'redactor-rails'
 # for rich text editing.
 gem 'stringex'
 # for slugs in urls
+gem 'stripe'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

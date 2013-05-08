@@ -1,0 +1,61 @@
+  <article>
+    <h3>Check out</h3>
+      <p>
+        Let your backers know how their payment information will be handled.
+        <br />
+	      <br />
+    		Enter your details below. This Secure Payment is powered by <a href="https://stripe.com/">Stripe</a>.
+      </p>
+      <%= form_tag charges_path, :id => "checkout" do %>
+        <%= text_field_tag "name", nil, :placeholder => "Name", :required => "required", :id => "name" %>
+        <%= email_field_tag "email", nil, :placeholder => "Email", :required => "required", :id => "email" %>
+        <%= text_field_tag "address_line1", nil, :placeholder => "Address line 1", :required => "required", :id => "address_line1" %>
+        <%= text_field_tag "address_line2", nil, :placeholder => "Address line 2/ Apt #", :id => "address_line2" %>
+		<%= text_field_tag "city", nil, :placeholder => "City", :required => "required", :id => "city" %>
+		<%= text_field_tag "state", nil, :placeholder => "State", :required => "required", :id => "state" %>
+        <%= text_field_tag "address_zip", nil, :placeholder => "Zipcode", :required => "required", :id => "address_zip", :maxlength => 5 %>
+        <%= text_field_tag "card_number", nil, :placeholder => "Credit Card number", :required => "required", :id => "card_number", :name => nil, :maxlength => 16 %>
+        <%= text_field_tag "card_expiry_month", nil, :placeholder => "Expiry month (e.g. 3)", :required => "required", :id => "card_expiry_month", :name => nil, :maxlength => 3 %>
+        <%= text_field_tag "card_expiry_year", nil, :placeholder => "Expiry year (e.g. 2015)", :required => "required", :id => "card_expiry_year", :name => nil, :maxlength => 4 %>
+        <%= text_field_tag "card_cvc", nil, :placeholder => "CVC", :required => "required", :id => "card_cvc", :name => nil, :maxlength => 4 %>
+        <input id="stripeToken" name="stripeToken" type="hidden">
+        <%= submit_tag "Checkout", :class => "blue_button disabled", :id => "submit_button" %>
+  <script>
+
+ $(document).ready(function() {
+      Stripe.setPublishableKey("<%= Rails.configuration.stripe[:publishable_key] %>");
+    function stripeResponseHandler(status, response) {
+        if (response === 200) {
+        	var form$ = $("#checkout");
+            var token = response['id'];
+            $("#stripeToken").val(token);
+            form$.get(0).submit();
+        } else {
+            alert(response.error.message)
+            $("#submit_button").removeAttr("disabled");
+        }
+    }
+
+    $("#checkout").submit(function(event) {
+      // disable the submit button to prevent repeated clicks
+      $('#submit_button').attr("disabled", "disabled");
+
+      Stripe.createToken({
+      	  name: $('#name').val(),
+          number: $('#card_number').val(),
+          cvc: $('#card_cvc').val(),
+          exp_month: $('#card_expiry_month').val(),
+          exp_year: $('#card_expiry_year').val(),
+          address_line1: $('#address_line1').val(),
+          address_line2: $('#address_line2').val(),
+          address_zip: $('#address_zip').val()
+		  
+      }, stripeResponseHandler);
+
+      // prevent the form from submitting with the default action
+      return false;
+    });
+  });
+</script>
+<% end %>
+</article>
