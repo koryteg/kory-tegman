@@ -5,7 +5,7 @@ class Charge < ActiveRecord::Base
     if valid?
       customer = Stripe::Customer.create(
         description: email, 
-        plan: "monthly100",
+        plan: plan,
         card: stripe_token,
         email: email
         )

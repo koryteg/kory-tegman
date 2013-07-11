@@ -87,6 +87,7 @@
         </div>
       <div class="actions">
         <%= f.hidden_field :stripe_token %>
+        <%= f.hidden_field :plan, :value => "monthly100" %>
       <%= f.submit "Subscribe" %>
       </div>
 	 <% end %>

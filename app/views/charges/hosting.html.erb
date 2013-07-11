@@ -90,6 +90,7 @@
         </div>
       <div class="actions">
         <%= f.hidden_field :stripe_token %>
+        <%= f.hidden_field :plan, :value => "hosting" %>
       <%= f.submit "Subscribe" %>
       <p>Your card will be charged $10 on <% @date = Time.now %> <%= @date.day.ordinalize %> of every month untill you decide to cancel. If you need to cancel please contact me at korytegman@gmail.com </p>
       </div>
