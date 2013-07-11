@@ -15,8 +15,12 @@ Koko::Application.routes.draw do
     post "sort", :on => :collection
   end
   resources :tools
-  resources :charges
-
+  resources :charges do
+    get 'hosting', :on => :collection
+  end
+  
+  # match '/charges/hosting' => 'charges#hosting', :as => :controller
+  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

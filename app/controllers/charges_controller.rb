@@ -9,10 +9,20 @@ class ChargesController < ApplicationController
 
 	def new
 		@charge = Charge.new
+		@plan = "monthly100"
 		respond_to do |format|
 	      format.html # index.html.erb
 	      format.json { render json: @charge }
 	    end
+	end
+
+	def hosting
+		@charge = Charge.new
+		@plan = "hosting"
+		respond_to do |format|
+			format.html
+			format.json { render json: @charge }
+		end
 	end
 
 	def create

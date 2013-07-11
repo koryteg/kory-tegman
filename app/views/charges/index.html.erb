@@ -1,5 +1,6 @@
 <p><a href="/charges/new">new charge</a></p>
-
+<br>
+<p><%= link_to 'sign up for hosting', hosting_charges_path %></p>
 <% if user_signed_in? %>
 	<% @charge.each do |charge| %>
 		<div id="charge-<%= charge.id %>" class="charge-box">

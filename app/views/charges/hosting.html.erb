@@ -29,9 +29,12 @@
 </script>
   <article>
     <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
-    <h3>sign up for support plan.</h3>
+    <h3>sign up for hosting</h3>
       <p>
-    		Enter your details below. This Secure Payment is powered by <a href="https://stripe.com/">Stripe</a>.
+    	This Secure Payment is powered by <a href="https://stripe.com/">Stripe</a>.
+      </p>
+      <p>
+      	Enter your details below. 
       </p>
      <%= form_for @charge do |f| %>
 	     <% if @charge.errors.any? %>
@@ -88,7 +91,7 @@
       <div class="actions">
         <%= f.hidden_field :stripe_token %>
       <%= f.submit "Subscribe" %>
+      <p>Your card will be charged $10 on <% @date = Time.now %> <%= @date.day.ordinalize %> of every month untill you decide to cancel. If you need to cancel please contact me at korytegman@gmail.com </p>
       </div>
 	 <% end %>
-   <p>Your card will be charged X amount on <% @date = Time.now %> <%= @date.day.ordinalize %> of every month untill you decide to cancel. If you need to cancel please contact me at korytegman@gmail.com </p>
 </article>
