@@ -22,13 +22,14 @@
 //= require redactor-rails
 //= require jquery.instagram
 
-$(function() {
+(function ($) {
+	$(function() {
 	SyntaxHighlighter.all();
 	currentPageNav();
 	$(".instagram").instagram({
-	      userId: '2734834',
-				accessToken: '2734834.1b3f753.bc8c93250e2b40aeb3216f8aebfb6bb6',
-				show : 9
+	    userId: '2734834',
+		accessToken: '2734834.1b3f753.bc8c93250e2b40aeb3216f8aebfb6bb6',
+		show : 9
 	  });
 });
 
@@ -41,4 +42,4 @@ function currentPageNav() {
 	});
 	
 }
-
+})(jQuery);

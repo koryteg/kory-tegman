@@ -39,16 +39,17 @@
           opacity: 0.4,
           scroll: true,
           update: function(){
-          $.ajax({
-          type: 'post',
-          data: $('#talent-content').sortable('serialize'),
-          dataType: 'script',
-          complete: function(request){
-          $('#talent-content').effect('highlight');
-          },
-          url: '/talents/sort'})
-        }
-      });
+            $.ajax({
+              type: 'post',
+              data: $('#talent-content').sortable('serialize'),
+              dataType: 'script',
+              complete: function(request){
+              $('#talent-content').effect('highlight');
+              },
+              url: '/talents/sort'
+            })
+          }
+        });
       });
       </script>
     <% end %>

@@ -24,7 +24,7 @@
 	</div>
 	<div class="talent-show-image">
 	
-		  <%= link_to image_tag( @talent.image_url.to_s), @talent.link %>
+		  <%= link_to image_tag( @talent.image_url(:full).to_s), @talent.link %>
 	
 	</div>
 	<% if user_signed_in? %>

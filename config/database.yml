@@ -3,6 +3,7 @@ development:
   encoding: unicode
   database: korytegman_development
   pool: 5
+  host: localhost
 
 test:
   adapter: postgresql
@@ -10,8 +11,8 @@ test:
   database: korytegman_test
   pool: 5
   
-test:
+production:
     adapter: postgresql
     encoding: unicode
-    database: korytegman_test
+    database: korytegman_production
     pool: 5
