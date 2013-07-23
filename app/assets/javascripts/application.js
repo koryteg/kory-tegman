@@ -36,7 +36,7 @@
 function currentPageNav() {
 	var url = window.location.pathname;
 	$("#head-right ul li a").each(function(){
-		if($(this).attr("href") == url){
+		if($(this).attr("href") === url){
 			$(this).addClass("onpage");
 		}
 	});

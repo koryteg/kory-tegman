@@ -24,17 +24,19 @@ a {
 	text-decoration: underline;
 }
 a:hover {
-	color: lighten($dark-grey, 15%);;
+	color: lighten($dark-grey, 15%);
 }
 
 .onpage {
-	text-decoration: underline !important;
+	color: lighten($dark-grey, 15%);
+	background-color:$dark-grey;
+
 }
 header {
 	width: 100%;
-	min-height: 160px;
 	background-color: $mid-grey;
 	border-bottom: 1px $dark-grey solid;
+	// overflow: visible;
 }
 #head-left{
 	width: 49%;
@@ -42,13 +44,23 @@ header {
 }
 #logo {
 	float: left;
+	position: relative;
+	h1{
+		margin: 0;
+		a{
+			text-decoration: none;
+		}
+		a:hover{
+			background-color:$dark-grey;
+		}
+	}
 }
 #title {
 	//width: 330px;
 	float: left;
 	h1{
-		margin: 0px;
-		margin-top: 50px;
+		margin: 3px;
+		
 		// font-family: $josefin-font;
 	}
 	p{
@@ -59,29 +71,38 @@ header {
 
 #head-right {
 	width: 49%;
-	height: 160px;
-	float: left;
+	float: right;
 }
 header ul {
-	width: 66.6666%;
+	// width: 70%;
 	display: block;
 	decoration: none;
 	padding: 0px;
-	float: left;
-	margin: 0px;
-	margin-top: 62px;
+	float: right;
+	height: 40px;
+	margin: 0;
 }
 
 header li {
 	display: block;
 	float: left;
-	width: 25%;
+	// width: 25%;
+	text-align: center;
+	height:100%;
+
 }
 #user-nav {
 	float: right;
 }
 .nav li a {
 	text-decoration: none;
+	display:block;
+	font-size: 1.2em;
+	padding: 8px 8px;
+	height:100%;
+}
+.nav li a:hover {
+	background-color:$dark-grey;
 }
 .content{
 	clear:both;
@@ -117,8 +138,9 @@ h2 a:hover{
 	display: block;
 	float: left;
 	//height: 225px;
-	border-bottom: 1px black solid;
-	
+	// border-bottom: 1px black solid;
+	background-color:darken($light-grey, 0%);
+	box-shadow: 0px 5px 8px #666;
 	b{
 		//width: 30.434783%;
 		float: left;
@@ -135,13 +157,15 @@ h2 a:hover{
 }
 .talent-post a{
 	text-decoration: none;
+
 }
 .talent-image {
 	width:65.217391%;
 	float: right;
-	//border: 1px $dark-grey solid;
+	// border: 1px $dark-grey solid;
 	img{
 		width:100%;
+		vertical-align: middle;
 	}
 }
 
