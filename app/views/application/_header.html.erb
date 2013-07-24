@@ -1,13 +1,13 @@
 <header id="header">
 	<nav>
 		<ul class="nav">
-			<li><%= link_to 'About', homes_path %></li>
+			<li><%= link_to 'About', root_path %></li>
 			<li><%= link_to 'Talent', talents_path %></li>
 			<li><%= link_to 'Tools', tools_path %></li>
 			<li><%= link_to 'Blog', blogs_path %></li>
 		</ul>
 	</nav>
-		<% if current_page?(homes_path) %>
+		<% if current_page?(root_path) %>
 			<%=	render "title"	%>
 		<% end %>
 	</div>
