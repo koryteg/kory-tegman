@@ -21,25 +21,29 @@
 //= require shscripts/shBrushJScript
 //= require redactor-rails
 //= require jquery.instagram
+//= require fittext/jquery.fittext
 
 (function ($) {
 	$(function() {
-	SyntaxHighlighter.all();
-	currentPageNav();
-	$(".instagram").instagram({
-	    userId: '2734834',
-		accessToken: '2734834.1b3f753.bc8c93250e2b40aeb3216f8aebfb6bb6',
-		show : 9
-	  });
-});
-
-function currentPageNav() {
-	var url = window.location.pathname;
-	$("#head-right ul li a").each(function(){
-		if($(this).attr("href") === url){
-			$(this).addClass("onpage");
-		}
+		var title = $("#title")
+		title.find("h1").fitText();
+		title.find("p").fitText();
+		SyntaxHighlighter.all();
+		currentPageNav();
+		$(".instagram").instagram({
+		    userId: '2734834',
+			accessToken: '2734834.1b3f753.bc8c93250e2b40aeb3216f8aebfb6bb6',
+			show : 9
+		});
 	});
-	
-}
+
+	function currentPageNav() {
+		var url = window.location.pathname;
+		$("nav ul li a").each(function(){
+			if($(this).attr("href") === url){
+				$(this).parent().addClass("onpage");
+			}
+		});
+		
+	}
 })(jQuery);

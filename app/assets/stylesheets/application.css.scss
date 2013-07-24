@@ -25,7 +25,8 @@
 @import "application/document";
 @import "redactor-rails";
 @import "application/media_queries"; // Media queries last
-
+@import "shstyles/shCore";
+@import "shstyles/shCoreRDark";
 //-----------------------------------------
 // Append includes
 //-----------------------------------------

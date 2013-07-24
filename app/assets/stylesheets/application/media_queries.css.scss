@@ -23,9 +23,6 @@
 				display: block;
 				margin: 0 auto;
 			}
-		#title{
-			display:none;
-		}
 	}
 	.home{
 		width:100%;
@@ -49,19 +46,6 @@
 
 
 @media only screen and (max-width: 660px) {
-	#head-left{
-		width:100%;
-	}
-	#head-right{
-		width:100%;
-		height:40px;
-	}
-	.head-container{
-		width:327px;
-		margin:0 auto;
-		//margin-left: 23%;
-		
-	}
 	header ul{
 		width:100%;
 		li{

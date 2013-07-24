@@ -1,23 +1,14 @@
 <header id="header">
-	<div id="head-left">
-		<div class="head-container">
-			<div id="logo">
-				<h1><a href="/">Kory Tegman</a></h1>
-				<% link_to (image_tag 'kt-logo2.png'), homes_path %>
-
-			</div>
-<!-- 			<div id="title">
-				<h1>Kory Tegman</h1>
-				<p>Web Dev + Design</p>
-			</div> -->
-		</div>
-	</div>
-	<div id="head-right">
+	<nav>
 		<ul class="nav">
 			<li><%= link_to 'About', homes_path %></li>
 			<li><%= link_to 'Talent', talents_path %></li>
 			<li><%= link_to 'Tools', tools_path %></li>
 			<li><%= link_to 'Blog', blogs_path %></li>
 		</ul>
+	</nav>
+		<% if current_page?(homes_path) %>
+			<%=	render "title"	%>
+		<% end %>
 	</div>
 </header>
