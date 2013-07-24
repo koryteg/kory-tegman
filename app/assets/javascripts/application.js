@@ -21,7 +21,7 @@
 //= require shscripts/shBrushJScript
 //= require redactor-rails
 //= require jquery.instagram
-//= require fittext/jquery.fittext
+//= require jquery.fittext
 
 (function ($) {
 	$(function() {
