@@ -6,8 +6,8 @@
 	<% @talents.each do |talent| %>
 		<li class="talent-post" id="talent-<%= talent.id %>">
 			<p><b><%= link_to talent.title, talent %></b>
-			<br />
-		    <%= talent.roles %></p>
+			</p>
+			<br>
 		    <%= link_to (image_tag talent.image_url(:thumb).to_s ), talent, :class => "talent-image" %>
 		    <% if user_signed_in? %>
 				<p><%= link_to 'Edit', edit_talent_path(talent) %>
