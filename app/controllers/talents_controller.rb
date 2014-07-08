@@ -3,27 +3,15 @@ class TalentsController < ApplicationController
   # GET /talents
   # GET /talents.json
   def index
-    @talents = Talent.all(:order => "talents.position ASC")
-
-    respond_to do |format|
-      format.html # index.html.erb
-      format.json { render json: @talents }
-    end
+    @talents = Talent.all
   end
 
   # GET /talents/1
   # GET /talents/1.json
   def show
     @talent = Talent.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @talent }
-    end
   end
 
-  # GET /talents/new
-  # GET /talents/new.json
   def new
     @talent = Talent.new
 
@@ -33,24 +21,17 @@ class TalentsController < ApplicationController
     end
   end
 
-  # GET /talents/1/edit
   def edit
     @talent = Talent.find(params[:id])
   end
 
-  # POST /talents
-  # POST /talents.json
   def create
-    @talent = Talent.new(params[:talent])
-
-    respond_to do |format|
-      if @talent.save
-        format.html { redirect_to @talent, notice: 'Talent was successfully created.' }
-        format.json { render json: @talent, status: :created, location: @talent }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @talent.errors, status: :unprocessable_entity }
-      end
+    @talent = Talent.new(talent_params)
+    if @talent.save
+      flash[:success] = 'Talent was successfully created.'
+      redirect_to @talent
+    else
+      render "new"
     end
   end
 
@@ -58,15 +39,11 @@ class TalentsController < ApplicationController
   # PUT /talents/1.json
   def update
     @talent = Talent.find(params[:id])
-
-    respond_to do |format|
-      if @talent.update_attributes(params[:talent])
-        format.html { redirect_to @talent, notice: 'Talent was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @talent.errors, status: :unprocessable_entity }
-      end
+    if @talent.update_attributes(talent_params)
+      flash[:success] = 'Talent was successfully updated.'
+      redirect_to @talent
+    else
+      render "edit"
     end
   end
 
@@ -90,5 +67,12 @@ class TalentsController < ApplicationController
       format.html { redirect_to talents_url }
       format.json { head :no_content }
     end
+  end
+
+  def talent_params
+    params.require(:talent).permit(
+        :title, :description, :image, :roles,
+        :link, :position
+      )
   end
 end

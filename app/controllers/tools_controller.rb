@@ -41,7 +41,7 @@ class ToolsController < ApplicationController
   # POST /tools
   # POST /tools.json
   def create
-    @tool = Tool.new(params[:tool])
+    @tool = Tool.new(tool_params)
 
     respond_to do |format|
       if @tool.save
@@ -60,7 +60,7 @@ class ToolsController < ApplicationController
     @tool = Tool.find(params[:id])
 
     respond_to do |format|
-      if @tool.update_attributes(params[:tool])
+      if @tool.update_attributes(tool_params)
         format.html { redirect_to @tool, notice: 'Tool was successfully updated.' }
         format.json { head :no_content }
       else
@@ -80,5 +80,11 @@ class ToolsController < ApplicationController
       format.html { redirect_to tools_url }
       format.json { head :no_content }
     end
+  end
+
+  def tool_params
+    params.require(:tool).permit(
+        :image, :name
+      )
   end
 end

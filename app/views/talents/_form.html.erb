@@ -28,6 +28,9 @@
     <%= f.text_area :description, :class => "redactor" %>
   </div>
   <div class="field">
+    <% if f.object.image %>
+      <%= image_tag( f.object.image) %>
+    <% end %>
     <%= f.file_field :image %>
   </div>
   <div class="actions">

@@ -41,7 +41,7 @@ class HomesController < ApplicationController
   # POST /homes
   # POST /homes.json
   def create
-    @home = Home.new(params[:home])
+    @home = Home.new(home_params)
 
     respond_to do |format|
       if @home.save
@@ -60,7 +60,7 @@ class HomesController < ApplicationController
     @home = Home.find(params[:id])
 
     respond_to do |format|
-      if @home.update_attributes(params[:home])
+      if @home.update_attributes(home_params)
         format.html { redirect_to @home, notice: 'Home was successfully updated.' }
         format.json { head :no_content }
       else
@@ -81,4 +81,11 @@ class HomesController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def home_params
+    params.require(:home).permit(
+        :title, :description
+      )
+  end
+
 end

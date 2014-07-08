@@ -3,7 +3,7 @@ class BlogsController < ApplicationController
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all( :order => "created_at DESC" )
+    @blogs = Blog.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
     @title = "Kory Tegman's Blog"
     @blogs = Blog.all( :order => "created_at DESC" )
     @updated = @blogs.first.updated_at unless @news_items.empty?
-    
+
     respond_to do |format|
         format.atom { render :layout => false }
         # we want the RSS feed to redirect permanently to the ATOM feed
@@ -54,7 +54,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(params[:blog])
+    @blog = Blog.new(blogs_params)
 
     respond_to do |format|
       if @blog.save
@@ -73,7 +73,7 @@ class BlogsController < ApplicationController
     @blog = Blog.find_by_url(params[:id])
 
     respond_to do |format|
-      if @blog.update_attributes(params[:blog])
+      if @blog.update_attributes(blogs_params)
         format.html { redirect_to @blog, notice: 'Blog was successfully updated.' }
         format.json { head :no_content }
       else
@@ -93,5 +93,11 @@ class BlogsController < ApplicationController
       format.html { redirect_to blogs_url }
       format.json { head :no_content }
     end
+  end
+
+  def blogs_params
+    params.require(:blog).permit(
+        :title, :content, :url
+      )
   end
 end

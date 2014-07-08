@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '~> 3.2.13'
+gem 'rails', '~> 4.1.4'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -11,15 +11,15 @@ gem 'rails', '~> 3.2.13'
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3', :require => 'sass-rails'
-  gem "sass", :require => 'sass'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails'
+  gem "sass"
+  gem 'coffee-rails'
   gem 'compass-rails'
   gem 'compass-h5bp'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
 
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
   gem 'railties'
   gem 'rack'
 end
@@ -30,10 +30,10 @@ gem 'html5-rails'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'mini_magick'
-gem 'devise', '~> 2.0.4'
+gem 'devise'
 gem 'thin'
 gem 'fog', "~> 1.3.1"
-gem 'redactor-rails' 
+gem 'redactor-rails'
 # for rich text editing.
 gem 'stringex'
 # for slugs in urls

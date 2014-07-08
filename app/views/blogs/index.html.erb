@@ -6,7 +6,7 @@
  -->
 <div id="listing-blogs">
 	<h2>Blog</h2>
-	
+
 	<% @blogs.each do |blog| %>
 		<div class="blog-post-preview">
 	   		<h3><%=link_to blog.title, blog %></h3>
@@ -24,7 +24,7 @@
 	<%= link_to 'New Blog', new_blog_path %>
 	<% end %>
 
-	
+
 </div>
 
 <div class="instagram">
@@ -44,7 +44,7 @@ $(function() {
 });
 
 function loadPics(start,finish) {
-	var posts = tumblr_api_read.posts;	
+	var posts = tumblr_api_read.posts;
 	$ul = $('.blog ul');
 	$li = $('.blog ul li');
 	for (var i=start; i<finish; i++){
@@ -57,7 +57,7 @@ function loadPics(start,finish) {
 			 	desc = p['slug'];
 			$(".blog-start").append('<div class="blog"><b>' + title + '</b><br /> <img alt ="' + desc + '" src="' + photo + '" class="blog-image" /></div>');
 		};
-	};	
+	};
 }
 </script> -->
 

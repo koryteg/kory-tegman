@@ -24,7 +24,7 @@ class ChargesController < ApplicationController
 	end
 
 	def create
-    	@charge = Charge.new(params[:charge])
+    	@charge = Charge.new(charge_params)
     	if @charge.save_with_payment
 		  redirect_to @charge, :notice => "Thank you for subscribing!"
 		else
@@ -43,10 +43,12 @@ class ChargesController < ApplicationController
 	#     )
 	# redirect_to charges_create_path
 	end
+
 	def show
 
 
 	end
+
 	def destroy
     @charge = Charge.find(params[:id])
     @charge.destroy
@@ -55,5 +57,13 @@ class ChargesController < ApplicationController
       format.html { redirect_to charges_url }
       format.json { head :no_content }
     end
+  end
+
+  def charge_params
+  	params.require(:charge).permit(
+  			:name, :stripe_token, :email, :address_line1,
+  			:address_line2, :city, :state,
+  			:address_zip, :stripe_customer_token, :plan
+  		)
   end
 end
