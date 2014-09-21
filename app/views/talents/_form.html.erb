@@ -33,6 +33,10 @@
     <% end %>
     <%= f.file_field :image %>
   </div>
+  <div class="field">
+    <%= f.label :archive %>?
+    <%= f.check_box :archive, :class => "" %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

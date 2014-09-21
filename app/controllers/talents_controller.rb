@@ -3,7 +3,7 @@ class TalentsController < ApplicationController
   # GET /talents
   # GET /talents.json
   def index
-    @talents = Talent.all
+    @talents = Talent.all.not_archived
   end
 
   # GET /talents/1
@@ -72,7 +72,7 @@ class TalentsController < ApplicationController
   def talent_params
     params.require(:talent).permit(
         :title, :description, :image, :roles,
-        :link, :position
+        :link, :position, :archive
       )
   end
 end

@@ -5,7 +5,7 @@ class Talent < ActiveRecord::Base
     order(position: :asc)
   }
 
-  scope :not_archived, where("archive != ?", true)
+  scope :not_archived, -> { where("archive != ?", true) }
 
   protected
   def set_position
