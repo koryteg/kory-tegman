@@ -10,7 +10,7 @@
 	<% @blogs.each do |blog| %>
 		<div class="blog-post-preview">
 	   		<h3><%=link_to blog.title, blog %></h3>
-		    <p><%= truncate( blog.content, :length => 300 ).html_safe  %>
+		    <p><%= truncate( blog.content, length: 300, escape: false ).html_safe  %>
 		    <%= link_to 'Continue Reading', blog, :class => "continue-reading" %></p>
 		    <% if user_signed_in? %>
 				<p><%= link_to 'Edit', edit_blog_path(blog) %></p>

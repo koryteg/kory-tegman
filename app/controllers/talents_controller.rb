@@ -3,7 +3,7 @@ class TalentsController < ApplicationController
   # GET /talents
   # GET /talents.json
   def index
-    @talents = Talent.all
+    @talents = Talent.not_archived
   end
 
   # GET /talents/1
