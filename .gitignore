@@ -16,3 +16,4 @@
 .DS_Store
 /public/uploads
 /vendor/bundle
+.rvmrc
