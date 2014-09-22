@@ -1,7 +1,7 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">
-  Stripe.setPublishableKey('pk_test_N8wSEqLNQq38mFeKRG1d2CWe');
+  Stripe.setPublishableKey('<%= Rails.configuration.stripe[:publishable_key]%>');
   console.log("i am here!");
   jQuery(function() {
   $('#new_charge').submit(function(event) {
@@ -28,7 +28,7 @@
     }
 </script>
   <article>
-    <%= tag :meta, :name => "stripe-key", :content => STRIPE_PUBLIC_KEY %>
+    <%= tag :meta, :name => "stripe-key", :content => Rails.configuration.stripe[:publishable_key] %>
     <h3>sign up for support plan.</h3>
       <p>
     		Enter your details below. This Secure Payment is powered by <a href="https://stripe.com/">Stripe</a>.
