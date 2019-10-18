@@ -58,6 +58,8 @@ GEM
       railties (>= 3.2.6, < 5)
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
     eventmachine (1.0.3)
     excon (0.13.4)
@@ -79,6 +81,8 @@ GEM
       jquery-rails (>= 2.0)
       railties (>= 3.2)
       thor (~> 0.14)
+    http-cookie (1.0.3)
+      domain_name (~> 0.5)
     i18n (0.6.11)
     jquery-rails (3.1.2)
       railties (>= 3.0, < 5.0)
@@ -86,7 +90,7 @@ GEM
     json (1.8.1)
     mail (2.6.1)
       mime-types (>= 1.16, < 3)
-    mime-types (2.3)
+    mime-types (2.99.3)
     mini_magick (3.8.1)
       subexec (~> 0.2.1)
     minitest (5.4.1)
@@ -94,7 +98,7 @@ GEM
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-ssh (2.9.1)
-    netrc (0.7.7)
+    netrc (0.11.0)
     newrelic_rpm (3.9.4.245)
     nokogiri (1.5.11)
     orm_adapter (0.5.0)
@@ -122,7 +126,8 @@ GEM
       devise
       mime-types
       orm_adapter
-    rest-client (1.7.2)
+    rest-client (1.8.0)
+      http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
     rmagick (2.13.3)
@@ -160,6 +165,9 @@ GEM
     uglifier (2.5.3)
       execjs (>= 0.3.0)
       json (>= 1.8.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.7.6)
     warden (1.2.3)
       rack (>= 1.0)
 
